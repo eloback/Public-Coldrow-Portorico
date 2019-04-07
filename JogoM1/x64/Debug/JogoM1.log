@@ -1,0 +1,6 @@
+﻿  Game.cpp
+  Inimigo.cpp
+  Gerando Código...
+TextureManager.obj : warning LNK4099: PDB 'vc142.pdb' nÒo foi encontrado 'TextureManager.obj' ou no 'C:\Dev\Projects\GitHub\Coldrow-Portorico\x64\Debug\vc142.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+main.obj : warning LNK4099: PDB 'vc142.pdb' nÒo foi encontrado 'main.obj' ou no 'C:\Dev\Projects\GitHub\Coldrow-Portorico\x64\Debug\vc142.pdb'; vinculando objeto quando quando sem nenhuma informaþÒo de depuraþÒo
+  JogoM1.vcxproj -> C:\Dev\Projects\GitHub\Coldrow-Portorico\x64\Debug\JogoM1.exe
