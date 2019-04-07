@@ -6,7 +6,7 @@ Inimigo::Inimigo(const char* texturesheet, int x, int y) : GameObject(textureshe
 {
 	fov.resize(dov);
 	for (int i = 0; i < dov; i++) {
-		fov[i].resize(2 * (i + 1));
+		fov[i].resize((2 * (i + 1)));
 	}
 }
 
@@ -26,7 +26,7 @@ void Inimigo::updateFov(Map* mapa, Jogador* player)
 	case 0:
 		for (int linha = 0; linha < dov; linha++) {
 			for (int coluna = 0 - linha; coluna + linha < (linha + 1) * 2; coluna++) {
-				fov[linha][coluna + linha] = mapa->getTile(j + coluna, i - (1 + linha), 1);
+				fov[linha][(coluna + linha)] = mapa->getTile(j + coluna, i - (1 + linha), 1);
 				inChase = player->detectado(fov[linha][coluna + linha]->dst.x, fov[linha][coluna + linha]->dst.y);
 				if(Game::testMode) fov[linha][coluna + linha]->setState(2);
 			}
