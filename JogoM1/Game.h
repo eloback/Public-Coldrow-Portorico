@@ -4,6 +4,20 @@
 #include "SDL_image.h"
 #include <iostream>
 
+struct vetor
+{
+	float x0;
+	float x1;
+	float y0;
+	float y1;
+	float modulo;
+
+	void calculaModulo() {
+		modulo = std::sqrt((x0 - x1) * (x0 - x1) + (y0 - y1) * (y0 - y1));
+		//return std::sqrt(j * j + i * i);
+	}
+};
+
 class Game
 {
 public:
@@ -21,7 +35,7 @@ public:
 	static SDL_Renderer* renderer;
 	static SDL_Event event;
 	static bool testMode;
-
+	static const int objQuant;
 
 private:
 	bool isRunning = false;

@@ -8,25 +8,18 @@ GameObject::GameObject(const char* texturesheet, int x, int y)
 
 	this->xpos = x;
 	this->ypos = y;
-
-	srcRect.h = 32;
-	srcRect.w = 32;
-	srcRect.x = 0;
-	srcRect.y = 0;
-
+	
+	srcRect = { 0, 0, 80, 80 };
 	dstRect.h = 64;
 	dstRect.w = 64;
 }
 
-void GameObject::Update() {
-	//xpos++;
-	//ypos++;
-	
-	srcRect.h = 32;
-	srcRect.w = 32;
-	srcRect.x = 0;
-	srcRect.y = 0;
+GameObject::~GameObject()
+{
+	SDL_DestroyTexture(objTexture);
+}
 
+void GameObject::Update() {
 	dstRect.x = xpos;
 	dstRect.y = ypos;
 	dstRect.h = srcRect.h * 2;

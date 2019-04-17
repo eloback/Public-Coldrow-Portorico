@@ -19,16 +19,17 @@ int main(int argc, char* argv[])
 		frameStart = SDL_GetTicks();
 
 		game->handleEvents();
-		game->update();
-		game->render();
+		if(game->running()) game->update();
+		if (game->running()) {
+			game->render();
 
-		frameTime = SDL_GetTicks() - frameStart;
+			frameTime = SDL_GetTicks() - frameStart;
 
-		if (frameDelay > frameTime) {
-			SDL_Delay(frameDelay - frameTime);
+			if (frameDelay > frameTime) {
+				SDL_Delay(frameDelay - frameTime);
+			}
 		}
 	}
-
 	game->clean();
 	return 0;
 }

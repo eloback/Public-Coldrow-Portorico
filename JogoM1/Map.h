@@ -7,17 +7,13 @@
 class Map
 {
 public:
-	Map();
-	//~Map();
+	Map(const char* mapa);
+	~Map();
 
 	void LoadMap(int arr[20][25]);
 	void DrawMap();
-	void Collision(GameObject* Player, GameObject* enemy);
+	void Collision(GameObject* Player, GameObject* enemy[]);
 	Tile* getTile(int xori, int yorj, bool mode);
-
-private:
-	SDL_Texture* woodenfloor;
-	SDL_Texture* grass;
 
 	Tile map[20][25];
 };

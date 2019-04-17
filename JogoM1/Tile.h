@@ -6,12 +6,15 @@ public:
 	Tile();
 	~Tile();
 	void setState(int state);
-	int getState() { return state; }
+	int getState();
+	void returnState();
 	void draw();
 
 	SDL_Rect src, dst;
+	bool existe = false;
 private:
-	int state;
+	int state = NULL;
+	int oldState;
 	SDL_Texture* texture;
 };
 

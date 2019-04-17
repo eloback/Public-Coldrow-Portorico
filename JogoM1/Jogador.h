@@ -1,5 +1,9 @@
 #pragma once
 #include "GameObject.h"
+#include "Map.h"
+#include <math.h>
+#include "Tiro.h"
+#include <vector>
 
 class Jogador :
 	public GameObject
@@ -9,12 +13,13 @@ public:
 	~Jogador();
 
 	void Movimenta();
-	void Update();
+	void Update(GameObject* inimigos[]);
 	void Render();
 	void UpdateDirection();
 	void Collision(int tileX, int tileY);
 	bool detectado(int tileX, int tileY);
-	void shootWeapon();
+	void vitoria(int tileX, int tileY);
+	void shootWeapon(Map* mapa);
 	void reloadWeapon();
 
 	int mouseX, mouseY;
@@ -23,11 +28,15 @@ public:
 	bool movingRight = false;
 	bool movingUp = false;
 	bool movingDown = false;
+	bool reloading = false;
+
 private:
-	int animationFrame = 0;
+	vetor line;
+	std::vector<Tiro> shoot;
 	int ammunition = 12;
+	int reloadTime = 0;
+
 	int oldX, oldY;
 	SDL_Texture* crosshair;
-	SDL_Texture* shoot;
 };
 
